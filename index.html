@@ -1,104 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jacob Geisen</title>
-
-    <!-- CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/bootswatch.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-    .sicon {
-    	height:40px;
-    	margin-top: 15px;
-    	vertical-align: bottom;
-    }
-	</style>
-	
-  </head>
-  
+        :root {
+            --primary-color: #0366d6;
+            --secondary-color: #24292e;
+            --text-color: #24292e;
+            --light-bg: #f6f8fa;
+            --border-color: #e1e4e8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        nav {
+            background-color: var(--light-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info p {
+            font-size: 1.2rem;
+            color: #586069;
+        }
+
+        .card {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-card .tech {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            margin-right: 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            padding: 0.5rem;
+            text-align: center;
+            background-color: var(--light-bg);
+        }
+
+        .blog-post {
+            margin-bottom: 2rem;
+        }
+
+        .blog-post h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-date {
+            color: #586069;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .blog-excerpt {
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-links i {
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .skill-tag {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 0.3rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
 <body>
-<div class="container">
+    <header>
+        <div class="container profile">
+            <img src="images/headshot-better.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <h1>Jacob Geisen</h1>
+                <p>Computer Science Student | Full-Stack Developer</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#fun">My Interests</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="card">
+                <p>I'm a Computer Science student at Southern Illinois University-Edwardsville (SIUE), minoring in Mathematical Studies and planning to graduate in May 2026. Currently, I work as a web development intern, applying my skills in HTML, CSS, JavaScript, and Python to build full-stack applications.</p>
+                <h3> Future Ambitions</h3>
+                <p>Going forward, I am eager to gain experience in AI, data science, and genomics, as well as contribute to impactful projects.</p>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2>Education</h2>
+            <div class="card">
+                <h3>Degree in Computer Science</h3>
+                <p>Southern Illinois University - Edwardsville, 2022 - Present</p>
+                <p>Relevant coursework: Data Structures, Algorithms, Software Engineering, Operating Systems, Software Engineering, Web Development</p>
+                
+                <h3>Technical Knowledge</h3>
+                <div class="skills">
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">C, C++</span>
+                </div>
+                
+                <h3>Awards & Achievements</h3>
+                <ul>
+                    <li>Dean's List: Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="card">
+                <h3>IT Intern</h3>
+                <p>SimplyConvert, Apr 2024 - Present</p>
+                <ul>
+                    <li>Developed and maintained web applications using PHP, jQuery, Javascript, and mySQL</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="grid">
+                <div class="card project-card">
+                    <h3>AI News Headline Evaluator</h3>
+                    <p>Used requests to scrape news sites for headlines and passed the headlines to 2 local models to evaluate the sentiment of the headline as positive, negative, or neutral.</p>
+                    <div class="tech-stack">
+                        <span class="tech">Python</span>
+                        <span class="tech">Phi-1.5</span>
+                        <span class="tech">tinyLlama</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/jacobgeisen/CS325-Project"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="card project-card">
+                    <h3>Semaphore and Interprocess Communication</h3>
+                    <p>Created and managed semaphores to prevent race conditions in shared memory accesses made by multiple concurrent processes.</p>
+                    <div class="tech-stack">
+                        <span class="tech">C++</span>
+                    </div>
 
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Jacob Geisen</a>
-		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-			<ul class="nav navbar-nav">
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-			</ul>
-		</div>
-	</nav>
+                </div>
+                <div class="card project-card">
+                    <h3>Assembly Language Bubble Sort</h3>
+                    <p>Implemented a traditional bubble sort using solely MIPS assembly instructions, utilizing the MARS simulator to run the program.</p>
+                    <div class="tech-stack">
+                        <span class="tech">Assembly</span>
+                    </div>
 
-	<div class="row">
-		<div class="col-md-8">
-			<h1>Hi! My name is Jacob.</h1>
-			<p><!----></p>
-			<center>
-			<p>
-		 		<a href="https://www.linkedin.com/in/jacob-geisen-296abb2b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><img class="sicon" src="assets/img/in.png" alt="linkedin"></a>
-		 		<a href="https://www.facebook.com/share/1DVRcfVftY/?mibextid=wwXIfr" target="_blank"><img class="sicon" src="assets/img/fb.png" alt="facebook"></a>
-		 		<a href="https://www.instagram.com/jacob_geisen?igsh=amc4OXY4aHN5ZGNw&utm_source=qr" target="_blank"><img class="sicon" src="assets/img/is.png" alt="instagram"></a>
-			</p>
-			</center>
-		</div>
-		<div class="col-md-4">
-			<h2>&nbsp;&nbsp;Contact me</h2>
-			<div class="list-group">
-				<a href="mailto:jacobgeisen@gmail.com" target="_top" class="list-group-item">
-					<h4 class="list-group-item-heading">Personal/Professional:</h4>
-					<p class="list-group-item-text">jacobgeisen@gmail.com</p>
-				</a>
-
-
-			</div>
-		</div>
-	</div>
-	  
-	<div class="row">
-		<div class="col-md-12">
-			<h2>Interests</h2>
-			<hr/>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-sm-4">
-			<h4>1. Web Development</h4>
-			<p>I enjoy building interactive and dynamic web applications, focusing on both front-end and back-end development. Currently, I work with technologies like JavaScript, jQuery, and PHP, along with databases such as mySQL. My experience in web development comes from my internship, where I contribute to real-world projects that enhance user experiences.</p>
-		</div>
-		<div class="col-sm-4">
-			<h4>2. Automation & AI</h4>
-			<p>I'm passionate about automation and the idea of building personal AI assistants to streamline daily tasks. My current project involves developing a JARVIS-like assistant using Python, with wake-word activation and API integrations. I believe automation can significantly improve efficiency, and I enjoy experimenting with ways to make everyday tasks simpler using technology.</p>
-		</div>
-		<div class="col-sm-4">
-			<h4>3. Ultimate Frisbee and Leadership</h4>
-			<p>As the captain of my university's Ultimate Frisbee team, as well as the St. Louis men's club team, I take on leadership responsibilities that include team strategy, logistics, and fostering a strong team culture. Leading a team has helped me develop problem-solving skills, adaptability, and the ability to work under pressure. These are qualities that translate well into my professional and academic pursuits.</p>
-		</div>
-	</div>
-
-   <!-- <div class="row">
-	<hr/>
-	<footer class="text-center">
-	</footer>
-    </div>		 -->
-
-</div><!-- /.container -->
-
-<script src="assets/js/jquery.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+                </div>
+            </div>
+        </section>
+        
+        <section id="fun">
+            <h2>My Interests</h2>
+            <div class="card">
+                <p>Beyond coding and technology, here are some things I enjoy:</p>
+                
+                <h3>Hobbies & Interests</h3>
+                <p>I love being outside and in nature, and I have a strong competitive instinct, while also taking time to give back when I can.</p>
+                
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="images/ultimate.jpeg">
+                        <div class="caption">Playing Ultimate Frisbee</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/family.jpeg">
+                        <div class="caption">On a walk with my family</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/dog.jpeg">
+                        <div class="caption">Walking a shelter dog with friends</div>
+                    </div>
+                </div>
+                
+                <h3>Tech Side Projects</h3>
+                <p>I am currently working on a JARVIS-style AI personal assistant which uses AI and API calls to aid in simple daily tasks and questions.</p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="card">
+                <p>I'm always open to new opportunities, collaborations, or just a friendly chat about technology. Feel free to reach out!</p>
+                
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/jacob-geisen-296abb2b6/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Jacob Geisen</p>
+            <p>Last updated: May 2025</p>
+        </div>
+    </footer>
 </body>
 </html>
