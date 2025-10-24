@@ -313,34 +313,35 @@
         <section id="about">
             <h2>About Me</h2>
             <div class="card">
-                <p>I'm a Computer Science student at Southern Illinois University-Edwardsville (SIUE), minoring in Mathematical Studies and planning to graduate in May 2026. Currently, I work as a web development intern, applying my skills in HTML, CSS, JavaScript, and Python to build full-stack applications.</p>
+                <p>I'm a Computer Science student at Southern Illinois University-Edwardsville (SIUE), minoring in Mathematical Studies and planning to graduate in May 2026. Currently, I work as a web development intern, applying my skills in PHP, JavaScript, and CSS to build full-stack applications.</p>
                 <h3> Future Ambitions</h3>
-                <p>Going forward, I am eager to gain experience in AI, data science, and genomics, as well as contribute to impactful projects.</p>
+                <p>Going forward, I am eager to gain experience in software engineering, AI, data science, and genomics, as well as contribute to impactful projects.</p>
             </div>
         </section>
         
         <section id="education">
             <h2>Education</h2>
             <div class="card">
-                <h3>Degree in Computer Science</h3>
-                <p>Southern Illinois University - Edwardsville, 2022 - Present</p>
-                <p>Relevant coursework: Data Structures, Algorithms, Software Engineering, Operating Systems, Software Engineering, Web Development</p>
+                <h3>B.S. in Computer Science</h3>
+                <p>Southern Illinois University - Edwardsville, Aug 2022 - Present, Expected Graduation: May 2026</p>
+                <p>Relevant coursework: Data Structures, Algorithms, Software Engineering, Operating Systems, Web Development, Networks</p>
                 
                 <h3>Technical Knowledge</h3>
                 <div class="skills">
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">C, C++</span>
                     <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
                     <span class="skill-tag">Java</span>
+                    <span class="skill-tag">CSS</span>
                     <span class="skill-tag">SQL</span>
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">C, C++</span>
                 </div>
                 
                 <h3>Awards & Achievements</h3>
                 <ul>
-                    <li>Dean's List: Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024</li>
+                    <li>Dean's List: Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025</li>
+                    <li>GPA: 3.953</li>
                 </ul>
             </div>
         </section>
@@ -351,14 +352,35 @@
                 <h3>IT Intern</h3>
                 <p>SimplyConvert, Apr 2024 - Present</p>
                 <ul>
-                    <li>Developed and maintained web applications using PHP, jQuery, Javascript, and mySQL</li>
+                    <li>Built a documentation portal with search and filtering capability to organize help articles, leveraging <b>PHP</b> and <b>JavaScript</b> to streamline support services for clients and internal teams</li>
+                    <li>Designed a new logn page section to display system features, enhancing client awareness of platform capabilities</li>
                 </ul>
+            </div>
+            <div class="card">
+                <h3>Undergraduate Researcher</h3>
+                <p>Tennessee Technological University, May - Aug 2025</p>
+                <p><i>National Science Foundation REU in Cybersecurity and Machine Learning</i></p>
+                <ul>
+                    <li>Implemented and tested application-level GPS spoofing attacks in ATAK, a military team coordination software, using <b>Java</b> to determine system vulnerabilities</li>
+                    <li>Applied machine learning models (One-Class SVM, Isolation Forest, and XGBoost) to assess whether spoofing attacks could be detected through behavioral patterns</li>
+                    <li>Co-authored a paper accepted into <i>IEEE Milcom 2025</i></li>
+                </ul>
+                <p>
+                    Through my research, we determined ATAK has no built-in detection mechanism for application-level GPS spoofing and standard machine learning models were unable to reliably detect these attacks. This concluded the requirement for more sophisticated mitigation methods, such as device attestation.
+                </p>
             </div>
         </section>
         
         <section id="projects">
             <h2>Projects</h2>
             <div class="grid">
+                <div class="card project-card">
+                    <h3>TCP Client-Server Course Registration System</h3>
+                    <p>Created a multi-threaded server using socket programming to manage concurrent clients in a course registration system. Defined a custom protocol with specific command structure, command parsing, and response codes.</p>
+                    <div class="tech-stack">
+                        <span class="tech">C++</span>
+                    </div>
+                </div>
                 <div class="card project-card">
                     <h3>AI News Headline Evaluator</h3>
                     <p>Used requests to scrape news sites for headlines and passed the headlines to 2 local models to evaluate the sentiment of the headline as positive, negative, or neutral.</p>
@@ -374,7 +396,7 @@
                 
                 <div class="card project-card">
                     <h3>Semaphore and Interprocess Communication</h3>
-                    <p>Created and managed semaphores to prevent race conditions in shared memory accesses made by multiple concurrent processes.</p>
+                    <p>Created and managed semaphores to prevent race conditions in shared memory accesses made by multiple concurrent processes in a producer-consumer system.</p>
                     <div class="tech-stack">
                         <span class="tech">C++</span>
                     </div>
@@ -382,7 +404,7 @@
                 </div>
                 <div class="card project-card">
                     <h3>Assembly Language Bubble Sort</h3>
-                    <p>Implemented a traditional bubble sort using solely MIPS assembly instructions, utilizing the MARS simulator to run the program.</p>
+                    <p>Implemented a traditional bubble sort using MIPS assembly instructions, utilizing the MARS simulator to run the program.</p>
                     <div class="tech-stack">
                         <span class="tech">Assembly</span>
                     </div>
@@ -397,7 +419,7 @@
                 <p>Beyond coding and technology, here are some things I enjoy:</p>
                 
                 <h3>Hobbies & Interests</h3>
-                <p>I love being outside and in nature, and I have a strong competitive instinct, while also taking time to give back when I can.</p>
+                <p>I love being outside and in nature, and I have a strong competitive instinct, while also taking time to hang out with friends.</p>
                 
                 <div class="image-gallery">
                     <div class="gallery-item">
@@ -413,7 +435,7 @@
                         <div class="caption">Walking a shelter dog with friends</div>
                     </div>
                 </div>
-                
+                <br>
                 <h3 style="padding-top: 8px;">Tech Side Projects</h3>
                 <p>I am currently working on a JARVIS-style AI personal assistant which uses AI and API calls to aid in simple daily tasks and questions.</p>
             </div>
@@ -422,7 +444,7 @@
         <section id="contact">
             <h2>Contact Me</h2>
             <div class="card">
-                <p>I'm always open to new opportunities, collaborations, or just a friendly chat about technology. Feel free to reach out!</p>
+                <p>I'm always open to new opportunities and discussions. Feel free to reach out!</p>
                 
                 <div class="contact-links">
                     <a href="https://www.linkedin.com/in/jacob-geisen-296abb2b6/" target="_blank">
@@ -436,7 +458,7 @@
     <footer>
         <div class="container">
             <p>Jacob Geisen</p>
-            <p>Last updated: May 2025</p>
+            <p>Last updated: October 2025</p>
         </div>
     </footer>
 </body>
